@@ -1,0 +1,58 @@
+###get all users
+GET http://localhost:5500/users
+
+###get one user
+GET http://localhost:5500/users/65eb3b393a7d59cf53ea11a4
+
+###create new user
+POST http://localhost:5500/users HTTP/1.1
+content-type: application/json
+
+{
+"firstName": "Aeryn",
+"lastName": "Suun",
+"email": "peacekeeper@moya.com",
+"password": "Moya4Win"
+}
+
+
+###update user
+PUT http://localhost:5500/users/65eb3b393a7d59cf53ea11a4 HTTP/1.1
+content-type: application/json
+
+{ 
+"firstName": "Curran",
+"lastName": "Lennart",
+"email": "curran@packHQ.com",
+"password": "Be@stLord"
+}
+
+###Delete user
+DELETE http://localhost:5500/users/65eb481140eb59cad28296c1 HTTP/1.1
+
+
+###get all books
+GET http://localhost:5500/books
+
+###get one book
+GET http://localhost:5500/books/
+
+###create new book
+POST http://localhost:5500/book HTTP/1.1
+content-type: application/json
+
+{
+
+}
+
+
+###update book
+PUT http://localhost:5500/book/ HTTP/1.1
+content-type: application/json
+
+{ 
+
+}
+
+###Delete book
+DELETE http://localhost:5500/book/ HTTP/1.1

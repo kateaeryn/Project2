@@ -1,0 +1,26 @@
+[
+    {
+        "firstName": "Curran",
+        "lastName": "Lennart",
+        "email": "curran@packHQ.com",
+        "password": "PackLifeRocks"
+    },
+    {
+        "firstName": "Kate",
+        "lastName": "Daniels",
+        "email": "kate@packHQ.com",
+        "password": "IntrovertsRUs"
+    },
+    {
+        "firstName": "Mercy",
+        "lastName": "Thompson",
+        "email": "mercy@packHQ.com",
+        "password": "OGRevenger"
+    },
+    {
+        "firstName": "Adam",
+        "lastName": "Hauptman",
+        "email": "adam@packHQ.com",
+        "password": "MilitaryDude"
+    }
+]
