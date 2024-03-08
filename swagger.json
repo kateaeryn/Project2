@@ -5,10 +5,11 @@
     "description": "Library API",
     "version": "1.0.0"
   },
-  "host": "localhost:5500",
+  "host": "localhost:5500", 
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/users": {
