@@ -1,12 +1,16 @@
+/**************************
+ * Require Statements
+ *************************/
 const express = require('express');
 const app = express();
 const mongodb = require('./config/database');
 const bodyParser = require('body-parser');
-
 const port = process.env.PORT || 5500;
 
+/**************************
+ * Middleware
+ **************************/
 app.use(bodyParser.json());
-app.use('/', require('./routes'));
 
 app.use((req, res, next) => {
     res.setHeader('Acess-Control-Allow-Origin', '*');
@@ -15,6 +19,25 @@ app.use((req, res, next) => {
     next();
 });
 
+/****************************
+ * Routes
+ ****************************/
+app.use('/', require('./routes'));
+
+
+/****************************
+ * Error handling
+ ****************************/
+// process.on('uncaughtException', (err, origin) => {
+//     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`)
+// });
+// process.on('unhandledRejection', (err, origin) => {
+//     console.log(process.stderr.fd, `Promise Rejection: ${err}\n` + `Rejection origin: ${origin}`);
+// })
+
+/**************************
+ * Verify database operation
+ **************************/
 mongodb.initDb((err) => {
     if (err) {
         console.log(err)

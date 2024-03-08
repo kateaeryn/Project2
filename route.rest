@@ -2,7 +2,7 @@
 GET http://localhost:5500/users
 
 ###get one user
-GET http://localhost:5500/users/65eb3b393a7d59cf53ea11a4
+GET http://localhost:5500/users/65eb3b483a7d59cf53ea2002
 
 ###create new user
 POST http://localhost:5500/users HTTP/1.1
@@ -24,11 +24,11 @@ content-type: application/json
 "firstName": "Curran",
 "lastName": "Lennart",
 "email": "curran@packHQ.com",
-"password": "Be@stLord"
+"password": "Be@stLordAtlanta"
 }
 
 ###Delete user
-DELETE http://localhost:5500/users/65eb481140eb59cad28296c1 HTTP/1.1
+DELETE http://localhost:5500/users/65eba2843a1bce84a285dc17 HTTP/1.1
 
 
 ###get all books
