@@ -3,34 +3,34 @@ const validator = {};
 
 validator.userRules = () => {
     return [
-        check("firstName")
+        check("firstName", 'First name is required')
             .isLength({min: 2}),
-        check("lastName")
+        check("lastName", 'Last name is required')
             .isLength({min: 2}),
-        check("email")
+        check("email", 'Email is required')
             .isEmail()
             .normalizeEmail(),
-        check("password")
+        check("password", 'Password is required')
             .isLength({min: 6})
 ]
 };
 
 validator.bookRules = () => {
     return [
-        check("title")
+        check("title", 'Title is required')
             .isLength({ min: 3 }),
-        check("author")
+        check("author", 'Author is required')
             .isLength({ min: 6 }),
-        check("genre")
+        check("genre", 'Genre is required')
             .isLength({ min: 4 }),
-        check("pageCount")
+        check("pageCount", 'Number of pages is required')
             .isNumeric(),
-        check("published")
+        check("published", "Publication year is required")
             .isNumeric(),
-        check("printType")
+        check("printType", "Type of print is required")
             .isLength({ min: 6 }),
         check("readStatus")
-            .isLength({ min: 4 })
+            .isLength({ min: 4 }, 'Status is required')
 ]
 };
 
