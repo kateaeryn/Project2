@@ -35,7 +35,7 @@ const newBook = async (req, res) => {
     const book = {
         title: req.body.title,
         author: req.body.author,
-        genre: req.body.author,
+        genre: req.body.genre,
         pageCount: req.body.pageCount,
         published: req.body.published,
         printType: req.body.printType,
@@ -58,7 +58,7 @@ const updateBook = async (req, res) => {
     const book = {
         title: req.body.title,
         author: req.body.author,
-        genre: req.body.author,
+        genre: req.body.genre,
         pageCount: req.body.pageCount,
         published: req.body.published,
         printType: req.body.printType,

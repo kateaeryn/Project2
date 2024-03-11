@@ -7,6 +7,8 @@ const mongodb = require('./config/database');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5500;
 
+
+
 /**************************
  * Middleware
  **************************/
@@ -28,12 +30,11 @@ app.use('/', require('./routes'));
 /****************************
  * Error handling
  ****************************/
-// process.on('uncaughtException', (err, origin) => {
-//     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`)
-// });
-// process.on('unhandledRejection', (err, origin) => {
-//     console.log(process.stderr.fd, `Promise Rejection: ${err}\n` + `Rejection origin: ${origin}`);
-// })
+app.use((err, req, res, next) => {
+    err.statusCode = err.statusCode || 500;
+    err.message = err.message || "Internal Server Error";
+    res.status(err.statusCode).json({ message: err.message });
+})
 
 /**************************
  * Verify database operation
