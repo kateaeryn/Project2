@@ -3,11 +3,11 @@
  *************************/
 const express = require('express');
 const app = express();
-const mongodb = require('./config/database');
+// const mongodb = require('./config/database');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5500;
 
-
+const dataBase = require('./models');
 
 /**************************
  * Middleware
@@ -21,9 +21,6 @@ app.use((req, res, next) => {
     next();
 });
 
-/****************************
- * Routes
- ****************************/
 app.use('/', require('./routes'));
 
 
@@ -39,13 +36,25 @@ app.use((err, req, res, next) => {
 /**************************
  * Verify database operation
  **************************/
-mongodb.initDb((err) => {
-    if (err) {
-        console.log(err)
-    } else {
-    app.listen(port, () => {console.log(`Listening on port ${port}`) });
-    }
-})
+dataBase.mongoose.connect(
+    process.env.MONGODB_URI)
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Connected to database on port: ${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Cannot connect to the database', err);
+        process.exit();
+    });
+
+// mongodb.initDb((err) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//     app.listen(port, () => {console.log(`Listening on port ${port}`) });
+//     }
+// })
 
 
 

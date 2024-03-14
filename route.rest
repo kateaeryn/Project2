@@ -35,10 +35,10 @@ DELETE http://localhost:5500/users/65ef66d2d23f8bf0bf1f32e3 HTTP/1.1
 GET http://localhost:5500/books
 
 ###get one book
-GET http://localhost:5500/books/65eba757c579ef38e46b12c1
+GET http://localhost:5500/books/65f37bcbb68ee8361f2b6587
 
 ###create new book
-POST http://localhost:5500/books HTTP/1.1
+POST http://localhost:5500/books/ HTTP/1.1
 content-type: application/json
 
 {
@@ -60,7 +60,7 @@ content-type: application/json
 { 
     "title": "The Law of Love",
     "author": "Steve Young",
-    "genre": "Religious",
+    "genre": "Spiritual",
     "pageCount": "208",
     "published": "2002",
     "printType": "ebook",
