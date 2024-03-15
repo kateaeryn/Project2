@@ -31,7 +31,7 @@ const getSingle = async (req, res, next) => {
 
 const newUser = async (req, res) => {
     //#swagger.tags=[Users]
-    if (!req.body.title || !req.body.author) {
+    if (!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.password) {
         res.status(400).send({ message: 'Must include title and author' });
         return;
     }

@@ -4,6 +4,12 @@ GET http://localhost:5500/users
 ###get one user
 GET http://localhost:5500/users/65eb3b483a7d59cf53ea2002
 
+###login
+GET http://localhost:5500/login
+
+###logout
+GET http://localhost:5500/logout
+
 ###create new user
 POST http://localhost:5500/users HTTP/1.1
 content-type: application/json
