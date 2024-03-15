@@ -10,7 +10,7 @@ router.use('/', require('./swagger'));
 router.get('/', (req, res) => { res.send('Welcome to the Library') });
 
 //login and logout
-router.get('/login', passport.authenticate('github'), (req, res) => { });
+router.get('/login', passport.authenticate('github'), (req, res) => { } );
 router.get('/logout', function (req, res, next) {
         req.logout(function (err) {
         if (err) { return next(err); }
